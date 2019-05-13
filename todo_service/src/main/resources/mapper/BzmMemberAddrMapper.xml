@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.yt.BzmMemberAddrMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.BzmMemberAddr">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="res_id" jdbcType="VARCHAR" property="resId" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="addr_province" jdbcType="VARCHAR" property="addrProvince" />
+    <result column="addr_province_name" jdbcType="VARCHAR" property="addrProvinceName" />
+    <result column="addr_city" jdbcType="VARCHAR" property="addrCity" />
+    <result column="addr_city_name" jdbcType="VARCHAR" property="addrCityName" />
+    <result column="addr_county" jdbcType="VARCHAR" property="addrCounty" />
+    <result column="addr_county_name" jdbcType="VARCHAR" property="addrCountyName" />
+    <result column="addr_detail" jdbcType="VARCHAR" property="addrDetail" />
+    <result column="addr_postal_code" jdbcType="VARCHAR" property="addrPostalCode" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
+    <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
+  </resultMap>
+</mapper>

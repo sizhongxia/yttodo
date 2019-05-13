@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.yt.BzmFivesMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.BzmFives">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="res_id" jdbcType="VARCHAR" property="resId" />
+    <result column="fives_name" jdbcType="VARCHAR" property="fivesName" />
+    <result column="fives_resume" jdbcType="VARCHAR" property="fivesResume" />
+    <result column="customer_service_tel" jdbcType="VARCHAR" property="customerServiceTel" />
+    <result column="addr_province" jdbcType="VARCHAR" property="addrProvince" />
+    <result column="addr_province_name" jdbcType="VARCHAR" property="addrProvinceName" />
+    <result column="addr_city" jdbcType="VARCHAR" property="addrCity" />
+    <result column="addr_city_name" jdbcType="VARCHAR" property="addrCityName" />
+    <result column="addr_county" jdbcType="VARCHAR" property="addrCounty" />
+    <result column="addr_county_name" jdbcType="VARCHAR" property="addrCountyName" />
+    <result column="addr_detail" jdbcType="VARCHAR" property="addrDetail" />
+    <result column="addr_lng" jdbcType="DECIMAL" property="addrLng" />
+    <result column="addr_lat" jdbcType="DECIMAL" property="addrLat" />
+    <result column="floor_space" jdbcType="VARCHAR" property="floorSpace" />
+    <result column="cover_pic_url" jdbcType="VARCHAR" property="coverPicUrl" />
+    <result column="fives_lead_user_no" jdbcType="INTEGER" property="fivesLeadUserNo" />
+    <result column="fives_lead_synopsis" jdbcType="VARCHAR" property="fivesLeadSynopsis" />
+    <result column="delete_flag" jdbcType="CHAR" property="deleteFlag" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
+    <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
+    <result column="fives_content" jdbcType="LONGVARCHAR" property="fivesContent" />
+  </resultMap>
+</mapper>
