@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.yt.TdPlanMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.TdPlan">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="plan_id" jdbcType="VARCHAR" property="planId" />
+    <result column="plan_content" jdbcType="VARCHAR" property="planContent" />
+    <result column="importance_level" jdbcType="INTEGER" property="importanceLevel" />
+    <result column="urgent_level" jdbcType="INTEGER" property="urgentLevel" />
+    <result column="plan_status" jdbcType="CHAR" property="planStatus" />
+    <result column="due_at" jdbcType="TIMESTAMP" property="dueAt" />
+    <result column="form_id" jdbcType="VARCHAR" property="formId" />
+    <result column="create_at" jdbcType="TIMESTAMP" property="createAt" />
+    <result column="update_at" jdbcType="TIMESTAMP" property="updateAt" />
+  </resultMap>
+</mapper>

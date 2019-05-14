@@ -63,9 +63,11 @@ public class CodeGenerator {
 		/**
 		 * 注意要更改Model类，在字段version加上 @Version 乐观锁注解
 		 */
-		genCodeByCustomModelName("td_user", "TdUser", "yt");
-		genCodeByCustomModelName("td_user_wx", "TdUserWx", "yt");
-		genCodeByCustomModelName("td_token", "TdToken", "yt");
+//		genCodeByCustomModelName("td_user", "TdUser", "yt");
+//		genCodeByCustomModelName("td_user_wx", "TdUserWx", "yt");
+//		genCodeByCustomModelName("td_token", "TdToken", "yt");
+		genCodeByCustomModelName("td_plan", "TdPlan", "yt");
+//		genCodeByCustomModelName("td_user_like", "TdUserLike", "yt");
 
 	}
 

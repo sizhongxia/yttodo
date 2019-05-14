@@ -110,6 +110,9 @@ public class WxmpApiBaseController {
 			if (StringUtils.isBlank(unionId)) {
 				JSONObject res = getUserInfo(encryptedData, sessionKey, iv);
 				unionId = res.getString("unionId");
+				if (StringUtils.isBlank(unionId)) {
+					unionId = "";
+				}
 			}
 			String gender = param.get("gender");
 			if (StringUtils.isBlank(gender)) {
@@ -127,16 +130,7 @@ public class WxmpApiBaseController {
 			if (StringUtils.isBlank(country)) {
 				country = "";
 			}
-			String uscene = param.get("uscene");
-			if (StringUtils.isBlank(uscene)) {
-				uscene = "";
-			} else {
-				TdUser bm = tdUserService.findBy("userId", uscene);
-				if (bm == null) {
-					uscene = "";
-				}
-			}
-			TdUser member = createNewMember(nickName, avatarUrl, city, province, country, gender, uscene);
+			TdUser member = createNewMember(nickName, avatarUrl, city, province, country, gender);
 			userId = member.getUserId();
 			// }
 			createMemberWx(userId, openId, unionId, sessionKey);
@@ -186,7 +180,7 @@ public class WxmpApiBaseController {
 		tdUserWxService.save(uw);
 	}
 
-	private TdUser createNewMember(String nickName, String avatarUrl, String city, String province, String country, String gender, String uscene) {
+	private TdUser createNewMember(String nickName, String avatarUrl, String city, String province, String country, String gender) {
 		TdUser member = new TdUser();
 		member.setUserId(IdUtils.initObjectId());
 		member.setNickName(nickName);
