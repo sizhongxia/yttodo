@@ -59,8 +59,12 @@ public class WxmpApiPlanController {
 		if (NumberUtils.isDigits(pageStr)) {
 			page = Integer.parseInt(pageStr);
 		}
-		condition.orderBy("importanceLevel").desc().orderBy("urgentLevel").desc().orderBy("createAt").desc();
-		PageHelper.startPage(page, 20, true);
+		if ("R".equals(status)) {
+			condition.orderBy("importanceLevel").desc().orderBy("urgentLevel").desc().orderBy("createAt").desc();
+		} else {
+			condition.orderBy("updateAt").desc();
+		}
+		PageHelper.startPage(page, 10, true);
 		List<TdPlan> plans = tdPlanService.findByCondition(condition);
 
 		boolean over = true;
@@ -74,8 +78,11 @@ public class WxmpApiPlanController {
 				item.put("planContent", plan.getPlanContent());
 				item.put("importanceLevel", plan.getImportanceLevel());
 				item.put("urgentLevel", plan.getUrgentLevel());
-				item.put("dueAt", DateUtil.format(plan.getDueAt(), "yyyy-MM-dd HH:mm"));
-				item.put("createAt", DateUtil.format(plan.getCreateAt(), "yyyy-MM-dd HH:mm"));
+				if ("R".equals(status)) {
+					item.put("dueAt", DateUtil.format(plan.getDueAt(), "yyyy-MM-dd"));
+				} else {
+					item.put("dueAt", DateUtil.format(plan.getUpdateAt(), "yyyy-MM-dd HH:mm"));
+				}
 				list.add(item);
 			}
 			Page<TdPlan> pageInfo = (Page<TdPlan>) plans;
